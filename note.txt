@@ -1,0 +1,23 @@
+https://go.xlivrdr.com/api/models?limit=100&tag=japanese
+https://stripchat.com/api/front/v2/models?limit=100&topLimit=61&favoritesLimit=48&primaryTag=girls
+
+Field Database:
+---------------
+- id
+- title
+- description
+- slug
+- category        [array] *bisa input lebih dari 1,contoh => ['Asian','Teen','']
+- chananel        [array]
+- artist          [aray]
+- square_image
+- portrait_image
+- landscape_image
+- url_streaming
+- url_download
+- tags            [array] *bisa input lebih dari 1,contoh => ['japanese','small-tits','fetish']
+- duration
+- views
+- vote            ["up":"98", "down":"2", "total":"100", "rating":"9,8"]
+- variable        ["featured":"yes","new":"yes","slide":"yes"]  
+
