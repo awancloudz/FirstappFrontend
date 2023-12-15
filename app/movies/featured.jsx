@@ -7,7 +7,7 @@ const Featured = () => {
     const [isLoading, setLoading] = useState(true)
   
     useEffect(() => {
-       fetch('http://localhost:8000/api/movies/movie')
+       fetch('http://localhost:4445/api/movies/movie')
        .then((res) => res.json())
        .then((data) => {
           setData(data.movie)

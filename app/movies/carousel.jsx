@@ -8,7 +8,7 @@ const Carousel = () => {
     const [isLoading, setLoading] = useState(true)
   
     useEffect(() => {
-       fetch('http://localhost:8000/api/movies/recent')
+       fetch('http://localhost:4445/api/movies/recent')
        .then((res) => res.json())
        .then((data) => {
           setData(data.movie)
