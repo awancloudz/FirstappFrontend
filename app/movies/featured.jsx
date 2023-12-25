@@ -26,7 +26,7 @@ const Featured = () => {
     return(
         <>
         <div className="col-12" align="center">{textloading}</div>
-        {data && data.map((item, i) => {
+        {data && data.slice(0, 24).map((item, i) => {
             return (
             <div className="col-xl-2 col-lg-2 col-md-3 col-6" key={i}>
                 <div className="gen-carousel-movies-style-2 movie-grid style-2">

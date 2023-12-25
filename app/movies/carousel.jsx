@@ -29,7 +29,7 @@ const Carousel = () => {
         <div className="col-12" align="center">{textloading}</div>
         <div className="gen-banner-movies">
             <div className="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="true" data-desk_num="1" data-lap_num="1" data-tab_num="1" data-mob_num="1" data-mob_sm="1" data-autoplay="true" data-loop="true" data-margin="30">
-            {data && data.map((item, i) => {
+            {data && data.slice(0, 10).map((item, i) => {
                 return (
                 <>
                 <div className="item" style={{backgroundImage:`url(${item.posterImg})`}} key={i}>

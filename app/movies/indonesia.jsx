@@ -3,15 +3,15 @@ import { useState, useEffect } from 'react'
 import dynamic from "next/dynamic";
 import Script from 'next/script';
 
-const Newrelease = () => {
+const Indonesia = () => {
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(true)
   
     useEffect(() => {
-       fetch('http://45.93.137.78:4445/api/movies/recent')
+       fetch('http://45.93.137.78:4445/api/movies/1185933')
        .then((res) => res.json())
        .then((data) => {
-          setData(data.movie)
+          setData(data.doodmovies.result.files)
           setLoading(false)
        })
     }, [])
@@ -28,10 +28,10 @@ const Newrelease = () => {
         <>
         <div className="col-12" align="center">{textloading}</div>
         <div className="gen-style-2">
-            <div className="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="true" data-desk_num="6"
-                data-lap_num="6" data-tab_num="4" data-mob_num="4" data-mob_sm="2" data-autoplay="false"
+            <div className="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="true" data-desk_num="4"
+                data-lap_num="4" data-tab_num="4" data-mob_num="4" data-mob_sm="2" data-autoplay="false"
                 data-loop="false" data-margin="30">
-            {data && data.map((item, i) => {
+            {data && data.slice(0, 10).map((item, i) => {
                 return (
                 <>
                 <div className="item" key={i}>
@@ -39,7 +39,7 @@ const Newrelease = () => {
                         <div className="gen-carousel-movies-style-2 movie-grid style-2">
                             <div className="gen-movie-contain">
                                 <div className="gen-movie-img">
-                                    <img src={item.posterImg} alt="owl-carousel-video-image"/>
+                                    <img src={item.single_img} alt="owl-carousel-video-image" style={{"object-fit": "none","object-position": "center","width":312,"height":176}}/>
                                     <div className="gen-movie-add">
                                     <div className="wpulike wpulike-heart">
                                         <div className="wp_ulike_general_class wp_ulike_is_not_liked"><button
@@ -84,9 +84,9 @@ const Newrelease = () => {
                                     </div>
                                     <div className="gen-movie-meta-holder">
                                     <ul>
-                                        <li><i className="far fa-star"></i> {item.rating}</li>
+                                        <li><i className="far fa-star"></i> 5.0</li>
                                         <li>
-                                            <a href="action.html"><span>{item.genres[0].toUpperCase()}</span></a>
+                                            <a href="action.html"><span>GENRE</span></a>
                                         </li>
                                     </ul>
                                     </div>
@@ -105,4 +105,4 @@ const Newrelease = () => {
     )
 }
 
-export default dynamic (() => Promise.resolve(Newrelease), {ssr: false})
+export default dynamic (() => Promise.resolve(Indonesia), {ssr: false})
